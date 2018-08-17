@@ -154,7 +154,7 @@ Information about record limits and total available count should also be include
                 "limit": 25
             }
         },
-        "results": []
+        "data": []
     }
 
 ## Request & Response Examples
@@ -167,19 +167,19 @@ Information about record limits and total available count should also be include
 
 ### GET /magazines
 
-Example: http://example.gov/api/v1/magazines.json
+Example: http://example.gov/api/v1/magazines
 
 Response body:
 
     {
         "metadata": {
-            "resultset": {
+            {
                 "count": 123,
                 "offset": 0,
                 "limit": 10
             }
         },
-        "results": [
+        "data": [
             {
                 "id": "1234",
                 "type": "magazine",
