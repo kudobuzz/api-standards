@@ -259,5 +259,6 @@ Request body:
  
  ## Security
  Use [OAuth2](http://oauth.net/2/) to secure your API.
+ 
     * Use a Bearer token for authentication.
     * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
