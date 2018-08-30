@@ -23,10 +23,6 @@ This document borrows heavily from:
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 * [Resource Modeling](https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling)
 
-## Pragmatic REST
-
-These guidelines aim to support a truly RESTful API. Here are a few exceptions:
-* Put the version number of the API in the URL (see examples below). Don’t accept any requests that do not specify a version number.
 
 ## RESTful URLs
 
@@ -42,6 +38,7 @@ These guidelines aim to support a truly RESTful API. Here are a few exceptions:
     * If it doesn’t change the logic for each response, like OAuth info, put it in the header.
 * Specify optional fields in a comma separated list.
 * Formats should be in the form of api/v2/resource/{id}
+* Design resource representations. Don’t simply represent database tables.
 
 ### Good URL examples
 * List of magazines:
