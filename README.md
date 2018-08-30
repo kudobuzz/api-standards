@@ -10,7 +10,7 @@
 * [Versions](#versions)
 * [Record limits](#record-limits)
 * [Request & Response Examples](#request--response-examples)
-* [Idempotent](# Idempotent)
+* [Idempotent](#Idempotent)
 
 ## Guidelines
 
