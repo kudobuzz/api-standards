@@ -10,6 +10,7 @@
 * [Versions](#versions)
 * [Record limits](#record-limits)
 * [Request & Response Examples](#request--response-examples)
+* [Idempotent](# Idempotent)
 
 ## Guidelines
 
@@ -252,3 +253,7 @@ Request body:
        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
        }
     }
+    
+ 
+ ## Idempotent
+ Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
