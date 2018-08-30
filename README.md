@@ -39,6 +39,7 @@ This document borrows heavily from:
 * Specify optional fields in a comma separated list.
 * Formats should be in the form of api/v2/resource/{id}
 * Design resource representations. Don’t simply represent database tables.
+* Support field projections on resources. Allow clients to reduce the number of fields that come back in the response.
 
 ### Good URL examples
 * List of magazines:
