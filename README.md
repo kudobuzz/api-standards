@@ -220,6 +220,7 @@ Example: http://example.gov/api/v1/magazines/[id].json
 Response body:
 
     {
+      "data": {
         "id": "1234",
         "type": "magazine",
         "title": "Public Water Systems",
@@ -228,6 +229,7 @@ Response body:
             {"id": "834", "name": "Water Quality"}
         ],
         "created": "1231621302"
+     }
     }
 
 
@@ -239,7 +241,7 @@ Example: Create – POST  http://example.gov/api/v1/magazines/[id]/articles
 Request body:
 
     { 
-    "data": [
+    "data": 
         {
             "title": "Raising Revenue",
             "author_first_name": "Jane",
@@ -250,5 +252,4 @@ Request body:
             "day": "18",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
         }
-      ]
     }
