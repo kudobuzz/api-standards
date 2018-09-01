@@ -11,6 +11,7 @@
 * [Request & Response Examples](#request--response-examples)
 * [Idempotent](#idempotent)
 * [Security](#security)
+* [Api Docs](#docs)
 * [Amazing Rest Apis](#examples)
 
 ## Guidelines
@@ -262,6 +263,10 @@ Request body:
    * Use a Bearer token for authentication.
    * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
    
+## Docs
+You write APIs so others can use them, benefit from them. Providing an API documentation for your REST APIs are crucial. 
+Use [Api Blueprint](https://apiblueprint.org/)
+
 ## Examples
 [Github](https://developer.github.com/v3/)
 [Twilio](https://www.twilio.com/docs/usage/api)
