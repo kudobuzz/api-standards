@@ -11,6 +11,7 @@
 * [Request & Response Examples](#request--response-examples)
 * [Idempotent](#idempotent)
 * [Security](#security)
+* [Amazing Rest Apis](#examples)
 
 ## Guidelines
 
@@ -260,3 +261,10 @@ Request body:
  Use [OAuth2](http://oauth.net/2/) to secure your API.
    * Use a Bearer token for authentication.
    * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
+   
+## Examples
+[Github](https://developer.github.com/v3/)
+[Twilio](https://www.twilio.com/docs/usage/api)
+[Stripe](https://stripe.com/docs/api)
+[DigitalOcean](https://developers.digitalocean.com/documentation/v2/#introduction)
+
