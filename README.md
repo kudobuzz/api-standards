@@ -9,7 +9,7 @@
 * [Versions](#versions)
 * [Record limits](#record-limits)
 * [Request & Response Examples](#request--response-examples)
-* [Rate Limiting]()
+* [Rate Limiting](#rate-limiting)
 * [Idempotent](#idempotent)
 * [Security](#security)
 * [Api Docs](#docs)
@@ -255,6 +255,11 @@ Request body:
        }
     }
     
+ ## Rate Limiting
+ Ensure that your apis' are protected against sudden increase in request. Use the following headers to notify consumers if they exceeded the number request in a specif interval.
+ `X-Rate-Limit-Limit` -  the number of request allowed in a given interval
+ `X-Rate-Limit-Remaining`- the number of request remaining
+ `X-Rate-Limit-Reset`- the next time for reset
  
  ## Idempotent
  Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
@@ -263,7 +268,7 @@ Request body:
  Use [OAuth2](http://oauth.net/2/) to secure your API.
    * Use a Bearer token for authentication.
    * Require HTTPS / TLS / SSL to access your APIs. OAuth2 Bearer tokens demand it. Unencrypted communication over HTTP allows for simple eavesdroppping and impersonation.
-   
+ 
 ## Docs
 You write APIs so others can use them, benefit from them. Providing an API documentation for your REST APIs are crucial. 
 Use [Api Blueprint](https://apiblueprint.org/)
