@@ -260,8 +260,11 @@ Request body:
  Use the following headers to notify consumers if they exceeded the number request in a specif interval.
  
  `X-Rate-Limit-Limit` -  the number of request allowed in a given interval
+ 
  `X-Rate-Limit-Remaining`- the number of request remaining
+ 
  `X-Rate-Limit-Reset`- the next time for reset
+ 
  
  ## Idempotent
  Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
