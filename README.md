@@ -256,7 +256,9 @@ Request body:
     }
     
  ## Rate Limiting
- Ensure that your apis' are protected against sudden increase in request. Use the following headers to notify consumers if they exceeded the number request in a specif interval.
+ Ensure that your apis' are protected against sudden increase in request.
+ Use the following headers to notify consumers if they exceeded the number request in a specif interval.
+ 
  `X-Rate-Limit-Limit` -  the number of request allowed in a given interval
  `X-Rate-Limit-Remaining`- the number of request remaining
  `X-Rate-Limit-Reset`- the next time for reset
