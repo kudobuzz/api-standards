@@ -9,6 +9,7 @@
 * [Versions](#versions)
 * [Record limits](#record-limits)
 * [Request & Response Examples](#request--response-examples)
+* [Rate Limiting]()
 * [Idempotent](#idempotent)
 * [Security](#security)
 * [Api Docs](#docs)
