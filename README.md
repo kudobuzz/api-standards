@@ -120,7 +120,8 @@ There are currently over 70 status codes, it is difficult for developers to memo
 | 401 UnAuthorised | The request is missing the necessary authentication details |
 | 403 Forbidden | The request credentials does not have the permission to perform that action on the resource |
 | 422 UnProcessable Entity| The request body is well formed but contains semantical errors. The error response body will contain more details
-| 429 Too Many Requests | The request was not accepted because the application made code, message for the developer, message for the end-user (when appropriate), internal error code (corresponding to some specific internally determined ID), links where developers can find more info. For example:
+| 429 Too Many Requests | The request was not accepted because the application has exceeded the rate limit. 
+
 ## Error handling
 
 Error responses can include message for the developer,an optional internal error code (corresponding to some specific internally determined ID), details for validation errors. For example:
