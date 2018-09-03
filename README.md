@@ -278,7 +278,10 @@ Use [Api Blueprint](https://apiblueprint.org/)
 
 ## Examples
 [Github](https://developer.github.com/v3/)
+
 [Twilio](https://www.twilio.com/docs/usage/api)
+
 [Stripe](https://stripe.com/docs/api)
+
 [DigitalOcean](https://developers.digitalocean.com/documentation/v2/#introduction)
 
