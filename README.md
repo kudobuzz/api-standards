@@ -27,7 +27,7 @@ This document borrows heavily from:
 * [Web API Design](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf), by Apigee
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 * [Resource Modeling](https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling)
-
+* [Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) by Vinay
 
 ## RESTful URLs
 
@@ -49,8 +49,8 @@ This document borrows heavily from:
 ### Good URL examples
 * List of magazines:
     * GET http://api.kudobuzz.com/v1/magazines
-* Filtering is a query:
-    * GET http://api.kudobuzz.com/v1/magazines?year=2011&sort=desc
+* Filtering and Sorting:
+    * GET http://api.kudobuzz.com/v1/magazines?year=2011&sort=-created_at,year
     * GET http://api.kudobuzz.com/api/v1/magazines?topic=economy&year=2011
 * A single magazine in JSON format:
     * GET http://api.kudobuzz.com/api/v1/magazines/1234
