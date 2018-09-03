@@ -37,7 +37,7 @@ This document borrows heavily from:
 * Use plural nouns only for consistency (no singular nouns).
 * Use HTTP verbs (GET, POST, PUT, DELETE) to operate on the collections and elements.
 * You shouldn’t need to go deeper than resource/identifier/resource.
-* Put the version number at the base of your URL, for example http://example.com/v1/path/to/resource
+* Put the version number at the base of your URL, for example http://api.kudobuzz.com/v1/path/to/resource
 * URL v. header:
     * If it changes the logic you write to handle the response, put it in the URL.
     * If it doesn’t change the logic for each response, like OAuth info, put it in the header.
@@ -48,30 +48,29 @@ This document borrows heavily from:
 
 ### Good URL examples
 * List of magazines:
-    * GET http://api.magazine.com/v1/magazines
+    * GET http://api.kudobuzz.com/v1/magazines
 * Filtering is a query:
-    * GET http://api.magazine.com/v1/magazines?year=2011&sort=desc
-    * GET http://api.magazine.com/api/v1/magazines?topic=economy&year=2011
+    * GET http://api.kudobuzz.com/v1/magazines?year=2011&sort=desc
+    * GET http://api.kudobuzz.com/api/v1/magazines?topic=economy&year=2011
 * A single magazine in JSON format:
-    * GET http://api.magazine.com/api/v1/magazines/1234
+    * GET http://api.kudobuzz.com/api/v1/magazines/1234
 * All articles in (or belonging to) this magazine:
-    * GET http://api.magazine.com/v1/magazines/1234/
+    * GET http://api.kudobuzz.com/v1/magazines/1234/
 * Specify optional fields in a comma separated list:
-    * GET http://api.magazine.com/v1/magazines/1234?fields=title,subtitle,date
+    * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
 * Add a new article to a particular magazine:
-    * POST http://api.magazine.com/v1/magazines/1234/articles
-* Search for a specific magazine
-    * GET https://api.magazine.com
+    * POST http://api.kudobuzz.com/v1/magazines/1234/articles
+
 
 ### Bad URL examples
 * Non-plural noun:
-    * http://api.magazine.com/magazine
-    * http://api.magazine.com/magazine/1234
-    * http://www.magazine.com/publisher/magazine/1234
+    * http://api.kudobuzz.com/v1/magazine
+    * http://api.kudobuzz.com/v1/magazine/1234
+    * http://api.kudobuzz.com/v1/publisher/magazine/1234
 * Verb in URL:
-    * http://www.example.gov/magazine/1234/create
+    * http://api.kudobuzz.com/v1/magazine/1234/create
 * Filter outside of query string
-    * http://www.example.gov/magazines/2011/desc
+    * http://api.kudobuzz.com/v1/magazines/2011/desc
 
 ## HTTP Verbs
 
@@ -148,8 +147,8 @@ Error responses can include message for the developer,an optional internal error
 
 * If no limit is specified, return results with a default limit.
 * To get records 51 through 75 do this:
-    * http://example.gov/magazines?limit=25&offset=50
-    * offset=383884834  means, ‘skip the first 50 records’
+    * http://api.kudobuzz.com/v1/magazines?limit=25&cursor=383884834
+    * cursor=383884834  means, ‘everything greater than 383884834’
     * limit=25 means, ‘return a maximum of 25 records’
 
 Information about record limits and total available count should also be included in the response. Example:
@@ -214,7 +213,7 @@ Response body:
 
 ### GET /magazines/[id]
 
-Example: http://example.gov/api/v1/magazines/[id].json
+Example: http:/api.kudouzz.com/v1/api/magazines/[id]
 
 Response body:
 
@@ -227,7 +226,8 @@ Response body:
             {"id": "125", "name": "Environment"},
             {"id": "834", "name": "Water Quality"}
         ],
-        "created": "1231621302"
+        "created_at": "1231621302",
+        "updated_at": "12321621302"
      }
     }
 
@@ -235,7 +235,7 @@ Response body:
 
 ### POST /magazines/[id]/articles
 
-Example: Create – POST  http://example.gov/api/v1/magazines/[id]/articles
+Example: Create – POST  http://api.kudobuzz.com/v1/magazines/[id]/articles
 
 Request body:
 
