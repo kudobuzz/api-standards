@@ -154,11 +154,9 @@ Information about record limits and total available count should also be include
 
     {
         "metadata": {
-            "resultset": {
                 "count": 227,
                 "offset": 25,
                 "limit": 25
-            }
         },
         "data": []
     }
