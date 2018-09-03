@@ -27,6 +27,7 @@ This document borrows heavily from:
 * [Web API Design](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf), by Apigee
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 * [Resource Modeling](https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling)
+* [Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 
 
 ## RESTful URLs
