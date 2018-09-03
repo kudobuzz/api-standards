@@ -11,7 +11,7 @@
 * [Request & Response Examples](#request--response-examples)
 * [Rate Limiting](#rate-limiting)
 * [Idempotent](#idempotent)
-* [Modeling Actions](*modeling-actions)
+* [Modeling Actions](#modeling-actions)
 * [Security](#security)
 * [Api Docs](#docs)
 * [Amazing Rest Apis](#examples)
