@@ -49,8 +49,8 @@ This document borrows heavily from:
 ### Good URL examples
 * List of magazines:
     * GET http://api.kudobuzz.com/v1/magazines
-* Filtering is a query:
-    * GET http://api.kudobuzz.com/v1/magazines?year=2011&sort=desc
+* Filtering and Sorting:
+    * GET http://api.kudobuzz.com/v1/magazines?year=2011&sort=-created_at,year
     * GET http://api.kudobuzz.com/api/v1/magazines?topic=economy&year=2011
 * A single magazine in JSON format:
     * GET http://api.kudobuzz.com/api/v1/magazines/1234
