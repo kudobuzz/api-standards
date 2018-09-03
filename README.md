@@ -48,24 +48,26 @@ This document borrows heavily from:
 
 ### Good URL examples
 * List of magazines:
-    * GET http://www.example.gov/api/v1/magazines
+    * GET http://api.magazine.com/v1/magazines
 * Filtering is a query:
-    * GET http://www.example.gov/api/v1/magazines?year=2011&sort=desc
-    * GET http://www.example.gov/api/v1/magazines?topic=economy&year=2011
+    * GET http://api.magazine.com/v1/magazines?year=2011&sort=desc
+    * GET http://api.magazine.com/api/v1/magazines?topic=economy&year=2011
 * A single magazine in JSON format:
-    * GET http://www.example.gov/api/v1/magazines/1234
+    * GET http://api.magazine.com/api/v1/magazines/1234
 * All articles in (or belonging to) this magazine:
-    * GET http://www.example.gov/api/v1/magazines/1234/
+    * GET http://api.magazine.com/v1/magazines/1234/
 * Specify optional fields in a comma separated list:
-    * GET http://www.example.gov/api/v1/magazines/1234?fields=title,subtitle,date
+    * GET http://api.magazine.com/v1/magazines/1234?fields=title,subtitle,date
 * Add a new article to a particular magazine:
-    * POST http://example.gov/api/v1/magazines/1234/articles
+    * POST http://api.magazine.com/v1/magazines/1234/articles
+* Search for a specific magazine
+    * GET https://api.magazine.com
 
 ### Bad URL examples
 * Non-plural noun:
-    * http://www.example.gov/magazine
-    * http://www.example.gov/magazine/1234
-    * http://www.example.gov/publisher/magazine/1234
+    * http://api.magazine.com/magazine
+    * http://api.magazine.com/magazine/1234
+    * http://www.magazine.com/publisher/magazine/1234
 * Verb in URL:
     * http://www.example.gov/magazine/1234/create
 * Filter outside of query string
