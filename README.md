@@ -60,7 +60,8 @@ This document borrows heavily from:
     * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
 * Add a new article to a particular magazine:
     * POST http://api.kudobuzz.com/v1/magazines/1234/articles
-
+* Search for articles
+    * GET https://api.kudobuzz.com/v1/acticles?q=food
 
 ### Bad URL examples
 * Non-plural noun:
