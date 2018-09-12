@@ -45,6 +45,8 @@ This document borrows heavily from:
 * Formats should be in the form of api/v2/resource/{id}
 * Design resource representations. Don’t simply represent database tables.
 * Support field projections on resources. Allow clients to reduce the number of fields that come back in the response.
+* For non-resource requests, url should identify the action being taken. E.g. if the endpoint converts 100 euros to chinese yen, is should look like `/convert?from=EURO&to=YEN&amount=100`
+* Make it clear in your API documentation that the "non-resource" scenarios are different. You can do this by simply separating out a section of your documentation that makes it clear that you use verbs in cases like this.
 
 ### Good URL examples
 * List of magazines:
@@ -62,6 +64,8 @@ This document borrows heavily from:
     * POST http://api.kudobuzz.com/v1/magazines/1234/articles
 * Search for articles
     * GET https://api.kudobuzz.com/v1/acticles?q=food
+* Download brochure
+    * GET https://api.kudobuzz/com/v1/download?edition=8
 
 ### Bad URL examples
 * Non-plural noun:
