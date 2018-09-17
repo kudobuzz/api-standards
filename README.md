@@ -13,7 +13,7 @@
 * [Idempotent](#idempotent)
 * [Modeling Actions](#modeling-actions)
 * [Security](#security)
-* [Api Docs](#docs)
+* [Documentation](#docs)
 * [Amazing Rest Apis](#examples)
 
 ## Guidelines
