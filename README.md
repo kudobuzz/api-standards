@@ -133,10 +133,12 @@ There are currently over 70 status codes, it is difficult for developers to memo
 Error responses can include message for the developer,an optional internal error code (corresponding to some specific internally determined ID), details for validation errors. For example:
 
     {
-      "message" : "Verbose, plain language description of the problem. Provide developers
-       suggestions about how to solve their problems here",required
-      "code" : "444444", // this is not the same statusCodes, optional
-      "details": [{param, messeage, value}] // Validation Error details, optional
+      "data": {
+         "message" : "Verbose, plain language description of the problem. Provide developers
+                      suggestions about how to solve their problems here",required
+          "code" : "444444", // this is not the same statusCodes, optional
+          "details": [{param, messeage, value}] // Validation Error details, optional
+      }
     }
 
 ## Versions
