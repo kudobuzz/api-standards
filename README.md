@@ -94,8 +94,6 @@ The action taken on the representation will be contextual to the media type bein
 ## Responses
 
 * No values in keys
-* No internal-specific names (e.g. "node" and "taxonomy term")
-* Metadata should only contain direct properties of the response set, not properties of the members of the response set
 
 ### Good examples
 
