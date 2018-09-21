@@ -28,6 +28,7 @@ This document borrows heavily from:
 * [Fielding's Dissertation on REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 * [Resource Modeling](https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling)
 * [Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) by Vinay
+* [White House Api Standards](https://github.com/WhiteHouse/api-standards#record-limits)
 
 ## RESTful URLs
 
