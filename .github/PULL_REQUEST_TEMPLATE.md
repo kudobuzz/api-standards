@@ -20,8 +20,8 @@ Add description of pr here
 Any background context will be appropriate
 
 #### What are the relevant issues?
-#2344
+<!-- #2344 -->
 
 
 #### Screenshots (if appropriate)
-Add any Screenshots here
+<!-- Add any Screenshots here -->
