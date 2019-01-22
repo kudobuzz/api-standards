@@ -11,11 +11,11 @@
 #### Checklist:
 <!-- Go over all points below, and after creating the PR, tick the checkboxes that apply. -->
 <!-- If you're unsure about any of these, don't hesitate to ask in the Help Contributors room linked above. We're here to help! -->
-- [  ] All test are passing. 
-- [  ] Tested changes locally.
-- [  ] Api Documentation follows api standards.
-- [  ] Improved documentation or readme where necessary. 
-- [  ] Your commits messages format follows our commit message guideline.
+- [ ] All test are passing. 
+- [ ] Tested changes locally.
+- [ ] Api Documentation follows api standards.
+- [ ] Improved documentation or readme where necessary. 
+- [ ] Your commits messages format follows our commit message guideline.
 
 
 #### What does this pr do?
