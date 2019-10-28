@@ -58,7 +58,7 @@ This document borrows heavily from:
 * A single magazine in JSON format:
     * GET http://api.kudobuzz.com/api/v1/magazines/1234
 * All articles in (or belonging to) this magazine:
-    * GET http://api.kudobuzz.com/v1/magazines/1234/
+    * GET http://api.kudobuzz.com/v1/magazines/1234/articles
 * Specify optional fields in a comma separated list:
     * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
 * Add a new article to a particular magazine:
