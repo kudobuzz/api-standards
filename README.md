@@ -63,6 +63,8 @@ This document borrows heavily from:
     * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
 * Add a new article to a particular magazine:
     * POST http://api.kudobuzz.com/v1/magazines/1234/articles
+* Add bulk articles to a particular magazine
+    * POST https://api.kudobuzz.com/v1/magazines/articles/bulk
 * Search for articles
     * GET https://api.kudobuzz.com/v1/acticles?q=food
 * Download brochure
@@ -173,6 +175,7 @@ Information about record limits and total available count should also be include
   - [GET /magazines](#get-magazines)
   - [GET /magazines/[id]](#get-magazinesid)
   - [POST /magazines/[id]/articles](#post-magazinesidarticles)
+  - [POST /magazines/articles/bulk](#post-magazinesarticlesbulk)
 
 ### GET /magazines
 
@@ -257,7 +260,72 @@ Request body:
        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
        }
     }
-    
+
+### POST /magazines/articles/bulk
+Example: Create – POST  https://api.kudobuzz.com/v1/magazines/articles/bulk
+
+Request body:
+
+    {
+      "magazine_id": "1234", 
+      "articles": [
+        {
+          "title": "Raising Revenue",
+          "author_first_name": "Jane",
+          "author_last_name": "Smith",
+          "author_email": "jane.smith@example.gov",
+          "year": "2012",
+          "month": "August",
+          "day": "18",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+       },
+        {
+          "title": "Global warming"
+          "author_first_name": "John",
+          "author_last_name": "Smith",
+          "author_email": "john.smith@example.gov",
+          "year": "2020",
+          "month": "July",
+          "day": "23",
+          "text": "Tips for slowing down the inevitable..."
+        }
+      ]
+    }
+
+Response body:
+
+    {
+      "data": [
+        {
+          "id": "1235",
+          "magazine_id": "1234",
+          "title": "Raising Revenue",
+          "author_first_name": "Jane",
+          "author_last_name": "Smith",
+          "author_email": "jane.smith@example.gov",
+          "year": "2012",
+          "month": "August",
+          "day": "18",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+       },
+        {
+          "id": "1236",
+          "magazine_id": "1234",
+          "title": "Global warming"
+          "author_first_name": "John",
+          "author_last_name": "Smith",
+          "author_email": "john.smith@example.gov",
+          "year": "2020",
+          "month": "July",
+          "day": "23",
+          "text": "Tips for slowing down the inevitable...",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+        }
+      ]
+    }
  ## Rate Limiting
  Ensure that your apis' are protected against sudden increase in request.
  Use the following headers to notify consumers if they exceeded the number request in a specif interval.
