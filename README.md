@@ -61,10 +61,10 @@ This document borrows heavily from:
     * GET http://api.kudobuzz.com/v1/magazines/1234/articles
 * Specify optional fields in a comma separated list:
     * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
+* Add bulk magazines
+    * POST https://api.kudobuzz.com/v1/magazines/bulk
 * Add a new article to a particular magazine:
     * POST http://api.kudobuzz.com/v1/magazines/1234/articles
-* Add bulk articles to a particular magazine
-    * POST https://api.kudobuzz.com/v1/magazines/articles/bulk
 * Search for articles
     * GET https://api.kudobuzz.com/v1/acticles?q=food
 * Download brochure
@@ -174,8 +174,8 @@ Information about record limits and total available count should also be include
 
   - [GET /magazines](#get-magazines)
   - [GET /magazines/[id]](#get-magazinesid)
+  - [POST /magazines/bulk](#post-magazinesbulk)
   - [POST /magazines/[id]/articles](#post-magazinesidarticles)
-  - [POST /magazines/articles/bulk](#post-magazinesarticlesbulk)
 
 ### GET /magazines
 
@@ -240,7 +240,50 @@ Response body:
      }
     }
 
+### POST /magazines/bulk
+Example: Create – POST  https://api.kudobuzz.com/v1/magazines/bulk
 
+Request body:
+
+    [
+      {
+        "title": "Water Quality",
+        "year": "2012",
+        "month": "August",
+        "description": "Your one-stop information source on how to preserve water"
+      },
+      {
+        "title": "Global warming"
+        "year": "2020",
+        "month": "July",
+        "description": "Tips for slowing down the inevitable"
+      }
+    ]
+
+Response body:
+
+    {
+      "data": [
+        {
+          "id": "1235",
+          "title": "Water Quality",
+          "description": "Your one-stop information source on how to preserve water",
+          "year": "2012",
+          "month": "August",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+       },
+        {
+          "id": "1236",
+          "title": "Global warming"
+          "description": "Tips for slowing down the inevitable",
+          "year": "2020",
+          "month": "July",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+        }
+      ]
+    }
 
 ### POST /magazines/[id]/articles
 
@@ -261,71 +304,6 @@ Request body:
        }
     }
 
-### POST /magazines/articles/bulk
-Example: Create – POST  https://api.kudobuzz.com/v1/magazines/articles/bulk
-
-Request body:
-
-    {
-      "magazine_id": "1234", 
-      "articles": [
-        {
-          "title": "Raising Revenue",
-          "author_first_name": "Jane",
-          "author_last_name": "Smith",
-          "author_email": "jane.smith@example.gov",
-          "year": "2012",
-          "month": "August",
-          "day": "18",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
-       },
-        {
-          "title": "Global warming"
-          "author_first_name": "John",
-          "author_last_name": "Smith",
-          "author_email": "john.smith@example.gov",
-          "year": "2020",
-          "month": "July",
-          "day": "23",
-          "text": "Tips for slowing down the inevitable..."
-        }
-      ]
-    }
-
-Response body:
-
-    {
-      "data": [
-        {
-          "id": "1235",
-          "magazine_id": "1234",
-          "title": "Raising Revenue",
-          "author_first_name": "Jane",
-          "author_last_name": "Smith",
-          "author_email": "jane.smith@example.gov",
-          "year": "2012",
-          "month": "August",
-          "day": "18",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-          "created_at": "1231621302",
-          "updated_at": "12321621302"
-       },
-        {
-          "id": "1236",
-          "magazine_id": "1234",
-          "title": "Global warming"
-          "author_first_name": "John",
-          "author_last_name": "Smith",
-          "author_email": "john.smith@example.gov",
-          "year": "2020",
-          "month": "July",
-          "day": "23",
-          "text": "Tips for slowing down the inevitable...",
-          "created_at": "1231621302",
-          "updated_at": "12321621302"
-        }
-      ]
-    }
  ## Rate Limiting
  Ensure that your apis' are protected against sudden increase in request.
  Use the following headers to notify consumers if they exceeded the number request in a specif interval.
