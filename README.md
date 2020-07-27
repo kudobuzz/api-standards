@@ -61,6 +61,8 @@ This document borrows heavily from:
     * GET http://api.kudobuzz.com/v1/magazines/1234/articles
 * Specify optional fields in a comma separated list:
     * GET http://api.kudobuzz.com/v1/magazines/1234?fields=title,subtitle,date
+* Add bulk magazines
+    * POST https://api.kudobuzz.com/v1/magazines/bulk
 * Add a new article to a particular magazine:
     * POST http://api.kudobuzz.com/v1/magazines/1234/articles
 * Search for articles
@@ -172,6 +174,7 @@ Information about record limits and total available count should also be include
 
   - [GET /magazines](#get-magazines)
   - [GET /magazines/[id]](#get-magazinesid)
+  - [POST /magazines/bulk](#post-magazinesbulk)
   - [POST /magazines/[id]/articles](#post-magazinesidarticles)
 
 ### GET /magazines
@@ -237,7 +240,50 @@ Response body:
      }
     }
 
+### POST /magazines/bulk
+Example: Create – POST  https://api.kudobuzz.com/v1/magazines/bulk
 
+Request body:
+
+    [
+      {
+        "title": "Water Quality",
+        "year": "2012",
+        "month": "August",
+        "description": "Your one-stop information source on how to preserve water"
+      },
+      {
+        "title": "Global warming"
+        "year": "2020",
+        "month": "July",
+        "description": "Tips for slowing down the inevitable"
+      }
+    ]
+
+Response body:
+
+    {
+      "data": [
+        {
+          "id": "1235",
+          "title": "Water Quality",
+          "description": "Your one-stop information source on how to preserve water",
+          "year": "2012",
+          "month": "August",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+       },
+        {
+          "id": "1236",
+          "title": "Global warming"
+          "description": "Tips for slowing down the inevitable",
+          "year": "2020",
+          "month": "July",
+          "created_at": "1231621302",
+          "updated_at": "12321621302"
+        }
+      ]
+    }
 
 ### POST /magazines/[id]/articles
 
@@ -257,7 +303,7 @@ Request body:
        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
        }
     }
-    
+
  ## Rate Limiting
  Ensure that your apis' are protected against sudden increase in request.
  Use the following headers to notify consumers if they exceeded the number request in a specif interval.
