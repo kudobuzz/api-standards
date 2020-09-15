@@ -220,6 +220,71 @@ Response body:
         ]
     }
 
+### GET /magazines?tag=some-tag-name
+
+Example 1: http://example.gov/api/v1/magazines?type=magazine
+
+Returns response with an array with multiple objects
+
+Response body:
+
+    {
+        "metadata": {
+           "count": 123
+        },
+        "data": [
+            {
+                "id": "1234",
+                "type": "magazine",
+                "title": "Public Water Systems",
+                "tags": [
+                    {"id": "125", "name": "Environment"},
+                    {"id": "834", "name": "Water Quality"}
+                ],
+                "created": "1231621302"
+            },
+            {
+                "id": 2351,
+                "type": "magazine",
+                "title": "Public Schools",
+                "tags": [
+                    {"id": "125", "name": "Elementary"},
+                    {"id": "834", "name": "Charter Schools"}
+                ],
+                "created": "126251302"
+            }
+            {
+                "id": 2351,
+                "type": "magazine",
+                "title": "Public Schools",
+                "tags": [
+                    {"id": "125", "name": "Pre-school"},
+                ],
+                "created": "126251302"
+            }
+        ]
+    }
+
+Example 2: http://example.gov/api/v1/magazines?special_code=code-1234
+
+Returns response with a single object
+
+    {
+      "data": {
+        "id": "1234",
+        "type": "magazine",
+        "title": "Public Water Systems",
+        "tags": [
+            {"id": "125", "name": "Environment"},
+            {"id": "834", "name": "Water Quality"}
+        ],
+        "created_at": "1231621302",
+        "updated_at": "12321621302"
+     }
+    }
+
+
+Response body
 ### GET /magazines/[id]
 
 Example: http:/api.kudouzz.com/v1/api/magazines/[id]
